@@ -16,13 +16,13 @@ public class BarbarianTest {
     }
 
     @Test
-    public void hasMaxHp() {
-        assertEquals(50, barbarian.getMaxHp());
+    public void hasMaxHealth() {
+        assertEquals(50, barbarian.getMaxHealth());
     }
 
     @Test
-    public void hasCurrentHp() {
-        assertEquals(50, barbarian.getCurrentHp());
+    public void hasCurrentHealth() {
+        assertEquals(50, barbarian.getCurrentHealth());
     }
 
     @Test
@@ -48,6 +48,49 @@ public class BarbarianTest {
     @Test
     public void hasLoot() {
         assertEquals(0, barbarian.getLoot());
+    }
+
+    @Test
+    public void canChangeWeapon() {
+        barbarian.changeWeapon(Weapon.MAGIC_SWORD);
+        assertEquals(Weapon.MAGIC_SWORD, barbarian.getWeapon());
+    }
+
+    @Test
+    public void canChangeArmour() {
+        barbarian.changeArmour(Armour.MAGIC_ARMOUR);
+        assertEquals(Armour.MAGIC_ARMOUR, barbarian.getArmour());
+    }
+
+    @Test
+    public void canLoseHealth() {
+        barbarian.loseHealth(1);
+        assertEquals(49, barbarian.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoBelow0Health() {
+        barbarian.loseHealth(100000);
+        assertEquals(0, barbarian.getCurrentHealth());
+    }
+
+    @Test
+    public void canGainHealth() {
+        barbarian.loseHealth(10);
+        barbarian.gainHealth(1);
+        assertEquals(41, barbarian.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoAboveMaxHealth() {
+        barbarian.gainHealth(1);
+        assertEquals(50, barbarian.getCurrentHealth());
+    }
+
+    @Test
+    public void canCollectLoot() {
+        barbarian.collectLoot(10);
+        assertEquals(10, barbarian.getLoot());
     }
 
     @Test

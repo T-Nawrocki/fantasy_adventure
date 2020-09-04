@@ -16,13 +16,13 @@ public class KnightTest {
     }
 
     @Test
-    public void hasMaxHp() {
-        assertEquals(40, knight.getMaxHp());
+    public void hasMaxHealth() {
+        assertEquals(40, knight.getMaxHealth());
     }
 
     @Test
-    public void hasCurrentHp() {
-        assertEquals(40, knight.getCurrentHp());
+    public void hasCurrentHealth() {
+        assertEquals(40, knight.getCurrentHealth());
     }
 
     @Test
@@ -49,6 +49,50 @@ public class KnightTest {
     public void hasLoot() {
         assertEquals(0, knight.getLoot());
     }
+
+    @Test
+    public void canChangeWeapon() {
+        knight.changeWeapon(Weapon.MAGIC_SWORD);
+        assertEquals(Weapon.MAGIC_SWORD, knight.getWeapon());
+    }
+
+    @Test
+    public void canChangeArmour() {
+        knight.changeArmour(Armour.MAGIC_ARMOUR);
+        assertEquals(Armour.MAGIC_ARMOUR, knight.getArmour());
+    }
+
+    @Test
+    public void canLoseHealth() {
+        knight.loseHealth(1);
+        assertEquals(39, knight.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoBelow0Health() {
+        knight.loseHealth(100000);
+        assertEquals(0, knight.getCurrentHealth());
+    }
+
+    @Test
+    public void canGainHealth() {
+        knight.loseHealth(10);
+        knight.gainHealth(1);
+        assertEquals(31, knight.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoAboveMaxHealth() {
+        knight.gainHealth(1);
+        assertEquals(40, knight.getCurrentHealth());
+    }
+
+    @Test
+    public void canCollectLoot() {
+        knight.collectLoot(10);
+        assertEquals(10, knight.getLoot());
+    }
+
 
     @Test
     public void canFight() {

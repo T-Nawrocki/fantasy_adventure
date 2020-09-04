@@ -5,8 +5,8 @@ import equipment.Weapon;
 
 public abstract class Player {
 
-    private int maxHp;
-    private int currentHp;
+    private int maxHealth;
+    private int currentHealth;
     private int strength;
     private int resistance;
     private Weapon weapon;
@@ -16,9 +16,9 @@ public abstract class Player {
     public abstract void fight();
     public abstract void useAbility();
 
-    public Player(int maxHp, int strength, int resistance, Weapon weapon, Armour armour) {
-        this.maxHp = maxHp;
-        this.currentHp = maxHp;
+    public Player(int maxHealth, int strength, int resistance, Weapon weapon, Armour armour) {
+        this.maxHealth = maxHealth;
+        this.currentHealth = maxHealth;
         this.strength = strength;
         this.resistance = resistance;
         this.weapon = weapon;
@@ -26,12 +26,12 @@ public abstract class Player {
         this.loot = 0;
     }
 
-    public int getMaxHp() {
-        return maxHp;
+    public int getMaxHealth() {
+        return maxHealth;
     }
 
-    public int getCurrentHp() {
-        return currentHp;
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
     public int getStrength() {
@@ -63,13 +63,14 @@ public abstract class Player {
         this.armour = armour;
     }
 
-    public void loseHp(int amount) {
-        currentHp -= amount;
+    public void loseHealth(int amount) {
+        currentHealth -= amount;
+        if (currentHealth < 0) currentHealth = 0;
     }
 
-    public void gainHp(int amount) {
-        currentHp += amount;
-        if (currentHp > maxHp) currentHp = maxHp;
+    public void gainHealth(int amount) {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
     }
 
     public void collectLoot(int amount) {

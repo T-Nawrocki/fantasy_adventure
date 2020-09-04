@@ -17,12 +17,12 @@ public class DwarfTest {
 
     @Test
     public void hasMaxHp() {
-        assertEquals(30, dwarf.getMaxHp());
+        assertEquals(30, dwarf.getMaxHealth());
     }
 
     @Test
     public void hasCurrentHp() {
-        assertEquals(30, dwarf.getCurrentHp());
+        assertEquals(30, dwarf.getCurrentHealth());
     }
 
     @Test
@@ -48,6 +48,49 @@ public class DwarfTest {
     @Test
     public void hasLoot() {
         assertEquals(0, dwarf.getLoot());
+    }
+
+    @Test
+    public void canChangeWeapon() {
+        dwarf.changeWeapon(Weapon.MAGIC_SWORD);
+        assertEquals(Weapon.MAGIC_SWORD, dwarf.getWeapon());
+    }
+
+    @Test
+    public void canChangeArmour() {
+        dwarf.changeArmour(Armour.MAGIC_ARMOUR);
+        assertEquals(Armour.MAGIC_ARMOUR, dwarf.getArmour());
+    }
+
+    @Test
+    public void canLoseHealth() {
+        dwarf.loseHealth(1);
+        assertEquals(29, dwarf.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoBelow0Health() {
+        dwarf.loseHealth(100000);
+        assertEquals(0, dwarf.getCurrentHealth());
+    }
+
+    @Test
+    public void canGainHealth() {
+        dwarf.loseHealth(10);
+        dwarf.gainHealth(1);
+        assertEquals(21, dwarf.getCurrentHealth());
+    }
+
+    @Test
+    public void cannotGoAboveMaxHealth() {
+        dwarf.gainHealth(1);
+        assertEquals(30, dwarf.getCurrentHealth());
+    }
+
+    @Test
+    public void canCollectLoot() {
+        dwarf.collectLoot(10);
+        assertEquals(10, dwarf.getLoot());
     }
 
     @Test
