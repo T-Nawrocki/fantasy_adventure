@@ -1,3 +1,5 @@
+package player;
+
 import equipment.Armour;
 import equipment.Weapon;
 import org.junit.Before;

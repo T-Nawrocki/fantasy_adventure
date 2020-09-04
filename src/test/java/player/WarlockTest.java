@@ -1,3 +1,5 @@
+package player;
+
 import equipment.Armour;
 import equipment.Familiar;
 import equipment.Spell;
