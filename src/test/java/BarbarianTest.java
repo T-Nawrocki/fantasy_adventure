@@ -1,46 +1,54 @@
+import equipment.Armour;
+import equipment.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-import player.Barbarian;
+import player.classes.Barbarian;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class BarbarianTest {
 
-    Barbarian barbarian;
+    private Barbarian barbarian;
 
     @Before
     public void before() {
-        barbarian = new Barbarian(40, "Club");
+        barbarian = new Barbarian();
     }
 
     @Test
-    public void hasHealthPoints() {
-        assertEquals(40, barbarian.getHealthPoints());
+    public void hasMaxHp() {
+        assertEquals(50, barbarian.getMaxHp());
+    }
+
+    @Test
+    public void hasCurrentHp() {
+        assertEquals(50, barbarian.getCurrentHp());
+    }
+
+    @Test
+    public void hasStrength() {
+        assertEquals(10, barbarian.getStrength());
+    }
+
+    @Test
+    public void hasResistance() {
+        assertEquals(5, barbarian.getResistance());
     }
 
     @Test
     public void hasWeapon() {
-        assertEquals("Club", barbarian.getWeapon());
+        assertNotNull(barbarian.getWeapon());
     }
 
     @Test
-    public void canFight() {
-        assertEquals("Barbarian is fighting", barbarian.fight());
+    public void hasArmour() {
+        assertNotNull(barbarian.getArmour());
     }
 
     @Test
-    public void canChangeWeapon() {
-        barbarian.changeWeapon("Great Sword");
-        assertEquals("Great Sword", barbarian.getWeapon());
+    public void hasLoot() {
+        assertEquals(0, barbarian.getLoot());
     }
-
-    @Test
-    public void canPlay() {
-        barbarian.completeRoom();
-        barbarian.completeRoom();
-        barbarian.completeRoom();
-        barbarian.completeRoom();
-    }
-
 
 }

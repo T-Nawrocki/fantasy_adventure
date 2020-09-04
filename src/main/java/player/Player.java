@@ -1,62 +1,79 @@
 package player;
 
-import room.Room;
-
-import java.util.ArrayList;
+import equipment.Armour;
+import equipment.Weapon;
 
 public abstract class Player {
-    protected int healthPoints;
-    protected String weapon;
-    protected ArrayList<String> spells;
-    protected Room currentRoom;
-    protected int loot;
-    protected int damageResistance;
 
-    public Player(int healthPoints) {
-        this.healthPoints = healthPoints;
-        this.currentRoom = new Room();
+    private int maxHp;
+    private int currentHp;
+    private int strength;
+    private int resistance;
+    private Weapon weapon;
+    private Armour armour;
+    private int loot;
+
+    public abstract void fight();
+    public abstract void useAbility();
+
+    public Player(int maxHp, int strength, int resistance, Weapon weapon, Armour armour) {
+        this.maxHp = maxHp;
+        this.currentHp = maxHp;
+        this.strength = strength;
+        this.resistance = resistance;
+        this.weapon = weapon;
+        this.armour = armour;
         this.loot = 0;
     }
 
-    public int getHealthPoints() {
-        return this.healthPoints;
+    public int getMaxHp() {
+        return maxHp;
     }
 
-    public String getWeapon() {
-        return this.weapon;
+    public int getCurrentHp() {
+        return currentHp;
     }
 
-    public ArrayList<String> getSpells() {
-        return this.spells;
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getResistance() {
+        return resistance;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public Armour getArmour() {
+        return armour;
     }
 
     public int getLoot() {
         return loot;
     }
 
-    public void collectTreasure() {
-        System.out.println("Wow, there's " + currentRoom.getTreasure() + " gold pieces in here!");
-        loot += currentRoom.getTreasure();
+
+    public void changeWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
-    public abstract void fightEnemy();
-
-    public void completeRoom() {
-        if(currentRoom.getContents() == "an enemy") {
-            fightEnemy();
-        } else {
-            collectTreasure();
-        }
-        if (this.healthPoints > 0) currentRoom = new Room();
+    public void changeArmour(Armour armour) {
+        this.armour = armour;
     }
 
-    public void takeDamage() {
-        int damageTaken = currentRoom.getEnemy().getDamage();
-        int modifiedDamage = damageTaken - this.damageResistance;
-        if (modifiedDamage < 0) {
-            modifiedDamage = 0;
-        }
-        this.healthPoints -= modifiedDamage;
-        System.out.println("You take damage! Your current health is " + this.healthPoints);
+    public void loseHp(int amount) {
+        currentHp -= amount;
     }
+
+    public void gainHp(int amount) {
+        currentHp += amount;
+        if (currentHp > maxHp) currentHp = maxHp;
+    }
+
+    public void collectLoot(int amount) {
+        loot += amount;
+    }
+
 }
