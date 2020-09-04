@@ -11,8 +11,8 @@ public class Barbarian extends Player {
                 50,
                 10,
                 5,
-                new Weapon("axe"),
-                new Armour("leather")
+                Weapon.AXE,
+                Armour.LEATHER_ARMOUR
         );
     }
 

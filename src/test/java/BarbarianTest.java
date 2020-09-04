@@ -38,12 +38,12 @@ public class BarbarianTest {
 
     @Test
     public void hasWeapon() {
-        assertNotNull(barbarian.getWeapon());
+        assertEquals(Weapon.AXE, barbarian.getWeapon());
     }
 
     @Test
     public void hasArmour() {
-        assertNotNull(barbarian.getArmour());
+        assertEquals(Armour.LEATHER_ARMOUR, barbarian.getArmour());
     }
 
     @Test
