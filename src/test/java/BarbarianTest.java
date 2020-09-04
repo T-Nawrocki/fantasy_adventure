@@ -51,4 +51,16 @@ public class BarbarianTest {
         assertEquals(0, barbarian.getLoot());
     }
 
+    @Test
+    public void canFight() {
+        System.out.println("Attempting to fight...");
+        barbarian.fight();
+    }
+
+    @Test
+    public void canUseAbility() {
+        System.out.println("Attempting to use ability...");
+        barbarian.useAbility();
+    }
+
 }
