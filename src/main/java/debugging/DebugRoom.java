@@ -9,10 +9,6 @@ import java.util.HashMap;
 
 // THIS IS A DEBUGGING CLASS WHICH SHOULD NOT BE INSTANTIATED OUTSIDE OF TESTS
 public class DebugRoom extends Room {
-//
-//    public DebugRoom() {
-//        super();
-//    }
 
     @Override
     public void generateContents() {
@@ -23,6 +19,16 @@ public class DebugRoom extends Room {
         this.healingItem = new AbstractMap.SimpleEntry<>(HealingItem.SUPREME_POTION, 5);
         this.familiar = Familiar.DEMON;
         this.exits = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
+    }
+
+    @Override
+    public void describeRoom() {
+        System.out.println("==========");
+        System.out.println("You're not quite sure how you ended up here, " +
+                "but this appears to be some sort of control room");
+        System.out.println("The walls are blank, " +
+                "and there are pedestals with a number of objects around the room");
+        System.out.println("There are four doors, but they all seem to lead back here.");
     }
 
 }

@@ -17,6 +17,7 @@ public abstract class Room {
 
     public Room() {
         generateContents();
+        describeRoom();
     }
 
     public int getTreasure() {
@@ -48,5 +49,7 @@ public abstract class Room {
     }
 
     public abstract void generateContents();
+
+    public abstract void describeRoom();
 
 }
