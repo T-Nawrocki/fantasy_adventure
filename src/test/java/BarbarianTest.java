@@ -52,13 +52,15 @@ public class BarbarianTest {
 
     @Test
     public void canFight() {
-        System.out.println("Attempting to fight...");
+        System.out.println("==========");
+        System.out.println("Barbarian attempting to fight...");
         barbarian.fight();
     }
 
     @Test
     public void canUseAbility() {
-        System.out.println("Attempting to use ability...");
+        System.out.println("==========");
+        System.out.println("Barbarian attempting to use ability...");
         barbarian.useAbility();
     }
 

@@ -2,6 +2,7 @@ import equipment.Armour;
 import equipment.Weapon;
 import org.junit.Before;
 import org.junit.Test;
+import player.classes.Dwarf;
 
 import static org.junit.Assert.assertEquals;
 
@@ -51,13 +52,15 @@ public class DwarfTest {
 
     @Test
     public void canFight() {
-        System.out.println("Attempting to fight...");
+        System.out.println("==========");
+        System.out.println("Dwarf attempting to fight...");
         dwarf.fight();
     }
 
     @Test
     public void canUseAbility() {
-        System.out.println("Attempting to use ability...");
+        System.out.println("==========");
+        System.out.println("Dwarf attempting to use ability...");
         dwarf.useAbility();
     }
 
