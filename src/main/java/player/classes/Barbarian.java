@@ -2,9 +2,9 @@ package player.classes;
 
 import equipment.Armour;
 import equipment.Weapon;
-import player.Player;
+import player.archetypes.Melee;
 
-public class Barbarian extends Player {
+public class Barbarian extends Melee {
 
     public Barbarian() {
         super(

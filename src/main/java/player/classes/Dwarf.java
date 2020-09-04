@@ -2,9 +2,9 @@ package player.classes;
 
 import equipment.Armour;
 import equipment.Weapon;
-import player.Player;
+import player.archetypes.Melee;
 
-public class Dwarf extends Player {
+public class Dwarf extends Melee {
 
     public Dwarf() {
         super(
