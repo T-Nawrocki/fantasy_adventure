@@ -2,64 +2,63 @@ import equipment.Armour;
 import equipment.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-import player.classes.Barbarian;
 
 import static org.junit.Assert.assertEquals;
 
-public class BarbarianTest {
+public class DwarfTest {
 
-    private Barbarian barbarian;
+    private Dwarf dwarf;
 
     @Before
     public void before() {
-        barbarian = new Barbarian();
+        dwarf = new Dwarf();
     }
 
     @Test
     public void hasMaxHp() {
-        assertEquals(50, barbarian.getMaxHp());
+        assertEquals(30, dwarf.getMaxHp());
     }
 
     @Test
     public void hasCurrentHp() {
-        assertEquals(50, barbarian.getCurrentHp());
+        assertEquals(30, dwarf.getCurrentHp());
     }
 
     @Test
     public void hasStrength() {
-        assertEquals(10, barbarian.getStrength());
+        assertEquals(5, dwarf.getStrength());
     }
 
     @Test
     public void hasResistance() {
-        assertEquals(5, barbarian.getResistance());
+        assertEquals(8, dwarf.getResistance());
     }
 
     @Test
     public void hasWeapon() {
-        assertEquals(Weapon.AXE, barbarian.getWeapon());
+        assertEquals(Weapon.AXE, dwarf.getWeapon());
     }
 
     @Test
     public void hasArmour() {
-        assertEquals(Armour.LEATHER_ARMOUR, barbarian.getArmour());
+        assertEquals(Armour.CHAINMAIL, dwarf.getArmour());
     }
 
     @Test
     public void hasLoot() {
-        assertEquals(0, barbarian.getLoot());
+        assertEquals(0, dwarf.getLoot());
     }
 
     @Test
     public void canFight() {
         System.out.println("Attempting to fight...");
-        barbarian.fight();
+        dwarf.fight();
     }
 
     @Test
     public void canUseAbility() {
         System.out.println("Attempting to use ability...");
-        barbarian.useAbility();
+        dwarf.useAbility();
     }
 
 }
