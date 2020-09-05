@@ -53,12 +53,4 @@ public class DebugRoomTest {
         assertEquals(Familiar.DEMON, debugRoom.getFamiliar());
     }
 
-    @Test
-    public void hasExits() {
-        assertArrayEquals(
-                new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST},
-                debugRoom.getExits()
-        );
-    }
-
 }

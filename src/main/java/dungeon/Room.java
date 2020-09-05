@@ -13,7 +13,6 @@ public abstract class Room {
     protected Spell spell;
     protected AbstractMap.SimpleEntry<HealingItem, Integer> healingItem;
     protected Familiar familiar;
-    protected Direction[] exits;
 
     public Room() {
         generateContents();
@@ -42,10 +41,6 @@ public abstract class Room {
 
     public Familiar getFamiliar() {
         return familiar;
-    }
-
-    public Direction[] getExits() {
-        return exits;
     }
 
     public abstract void generateContents();

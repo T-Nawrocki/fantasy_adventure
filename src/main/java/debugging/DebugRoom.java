@@ -5,7 +5,6 @@ import dungeon.Room;
 import equipment.*;
 
 import java.util.AbstractMap;
-import java.util.HashMap;
 
 // THIS IS A DEBUGGING CLASS WHICH SHOULD NOT BE INSTANTIATED OUTSIDE OF TESTS
 public class DebugRoom extends Room {
@@ -18,7 +17,6 @@ public class DebugRoom extends Room {
         this.spell = Spell.METEOR_SWARM;
         this.healingItem = new AbstractMap.SimpleEntry<>(HealingItem.SUPREME_POTION, 5);
         this.familiar = Familiar.DEMON;
-        this.exits = new Direction[] {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
     }
 
     @Override
