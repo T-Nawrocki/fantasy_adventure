@@ -1,8 +1,8 @@
-package player.archetypes;
+package party.archetypes;
 
 import equipment.Armour;
 import equipment.Weapon;
-import player.Player;
+import party.Player;
 
 public abstract class Melee extends Player {
 

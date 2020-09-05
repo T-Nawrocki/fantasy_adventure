@@ -1,8 +1,8 @@
-package player.classes;
+package party.classes;
 
 import equipment.Armour;
 import equipment.Weapon;
-import player.archetypes.Melee;
+import party.archetypes.Melee;
 
 public class Knight extends Melee {
 

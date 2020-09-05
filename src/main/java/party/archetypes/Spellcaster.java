@@ -1,10 +1,10 @@
-package player.archetypes;
+package party.archetypes;
 
 import equipment.Armour;
 import equipment.Familiar;
 import equipment.Spell;
 import equipment.Weapon;
-import player.Player;
+import party.Player;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,10 @@
-package player.classes;
+package party.classes;
 
 import equipment.Armour;
 import equipment.Familiar;
 import equipment.Spell;
 import equipment.Weapon;
-import player.archetypes.Spellcaster;
+import party.archetypes.Spellcaster;
 
 import java.util.ArrayList;
 import java.util.Collections;

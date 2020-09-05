@@ -1,7 +1,7 @@
-package player.classes;
+package party.classes;
 
 import equipment.*;
-import player.archetypes.Spellcaster;
+import party.archetypes.Spellcaster;
 
 import java.util.ArrayList;
 import java.util.Collections;

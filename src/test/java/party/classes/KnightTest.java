@@ -1,10 +1,10 @@
-package player;
+package party.classes;
 
 import equipment.Armour;
 import equipment.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-import player.classes.Knight;
+import party.classes.Knight;
 
 import static org.junit.Assert.assertEquals;
 

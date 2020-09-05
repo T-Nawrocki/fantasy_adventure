@@ -1,4 +1,4 @@
-package player;
+package party.classes;
 
 import equipment.Armour;
 import equipment.Familiar;
@@ -6,7 +6,7 @@ import equipment.Spell;
 import equipment.Weapon;
 import org.junit.Before;
 import org.junit.Test;
-import player.classes.Wizard;
+import party.classes.Wizard;
 
 import java.util.ArrayList;
 import java.util.Arrays;

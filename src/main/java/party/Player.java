@@ -1,4 +1,4 @@
-package player;
+package party;
 
 import equipment.Armour;
 import equipment.Weapon;

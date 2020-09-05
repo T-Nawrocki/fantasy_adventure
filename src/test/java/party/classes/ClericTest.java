@@ -1,9 +1,9 @@
-package player;
+package party.classes;
 
 import equipment.*;
 import org.junit.Before;
 import org.junit.Test;
-import player.classes.Cleric;
+import party.classes.Cleric;
 
 import java.util.*;
 
