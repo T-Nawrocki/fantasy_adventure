@@ -6,8 +6,8 @@ import party.Player;
 
 public abstract class Melee extends Player {
 
-    public Melee(int maxHealth, int strength, int resistance, Weapon weapon, Armour armour) {
-        super(maxHealth, strength, resistance, weapon, armour);
+    public Melee(String name, int maxHealth, int strength, int resistance, Weapon weapon, Armour armour) {
+        super(name, maxHealth, strength, resistance, weapon, armour);
     }
 
 }

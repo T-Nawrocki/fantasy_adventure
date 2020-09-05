@@ -20,7 +20,12 @@ public class WarlockTest {
 
     @Before
     public void before() {
-        warlock = new Warlock();
+        warlock = new Warlock("Percy");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Percy", warlock.getName());
     }
 
     @Test

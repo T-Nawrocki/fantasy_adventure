@@ -11,9 +11,9 @@ import java.util.Collections;
 
 public class Wizard extends Spellcaster {
 
-    public Wizard() {
-
+    public Wizard(String name) {
         super(
+                name,
                 20,
                 0,
                 -2,

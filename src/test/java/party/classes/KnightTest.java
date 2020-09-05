@@ -14,7 +14,12 @@ public class KnightTest {
 
     @Before
     public void before() {
-        knight = new Knight();
+        knight = new Knight("Vax");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Vax", knight.getName());
     }
 
     @Test

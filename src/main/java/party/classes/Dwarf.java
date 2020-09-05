@@ -6,8 +6,9 @@ import party.archetypes.Melee;
 
 public class Dwarf extends Melee {
 
-    public Dwarf() {
+    public Dwarf(String name) {
         super(
+                name,
                 30,
                 5,
                 8,

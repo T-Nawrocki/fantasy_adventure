@@ -14,7 +14,12 @@ public class BarbarianTest {
 
     @Before
     public void before() {
-        barbarian = new Barbarian();
+        barbarian = new Barbarian("Grog");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Grog", barbarian.getName());
     }
 
     @Test

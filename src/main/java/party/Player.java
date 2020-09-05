@@ -5,6 +5,7 @@ import equipment.Weapon;
 
 public abstract class Player {
 
+    private String name;
     private int maxHealth;
     private int currentHealth;
     private int strength;
@@ -16,7 +17,8 @@ public abstract class Player {
     public abstract void fight();
     public abstract void useAbility();
 
-    public Player(int maxHealth, int strength, int resistance, Weapon weapon, Armour armour) {
+    public Player(String name, int maxHealth, int strength, int resistance, Weapon weapon, Armour armour) {
+        this.name = name;
         this.maxHealth = maxHealth;
         this.currentHealth = maxHealth;
         this.strength = strength;
@@ -24,6 +26,10 @@ public abstract class Player {
         this.weapon = weapon;
         this.armour = armour;
         this.loot = 0;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public int getMaxHealth() {

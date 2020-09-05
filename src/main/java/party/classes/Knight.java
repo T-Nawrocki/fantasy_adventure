@@ -6,8 +6,9 @@ import party.archetypes.Melee;
 
 public class Knight extends Melee {
 
-    public Knight() {
+    public Knight(String name) {
         super(
+                name,
                 40,
                 7,
                 3,

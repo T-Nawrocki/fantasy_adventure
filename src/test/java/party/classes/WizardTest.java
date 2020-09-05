@@ -20,7 +20,12 @@ public class WizardTest {
 
     @Before
     public void before() {
-        wizard = new Wizard();
+        wizard = new Wizard("Caleb");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Caleb", wizard.getName());
     }
 
     @Test

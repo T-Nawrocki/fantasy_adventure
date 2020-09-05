@@ -11,8 +11,9 @@ public class Cleric extends Spellcaster {
 
     private HashMap<HealingItem, Integer> healingItems;
 
-    public Cleric() {
+    public Cleric(String name) {
         super(
+                name,
                 20,
                 0,
                 -2,

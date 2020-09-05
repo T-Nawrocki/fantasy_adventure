@@ -20,6 +20,11 @@ public class PartyTest {
     }
 
     @Test
+    public void canGetPartySize() {
+        assertEquals(0, party.getPartySize());
+    }
+
+    @Test
     public void partyMembersStartsEmpty() {
         assertEquals(
                 new ArrayList<>(),
@@ -29,7 +34,7 @@ public class PartyTest {
 
     @Test
     public void canAddPartyMember() {
-        Barbarian barbarian = new Barbarian();
+        Barbarian barbarian = new Barbarian("Grog");
         party.addPartyMember(barbarian);
         assertEquals(
                 new ArrayList<>(Collections.singletonList(barbarian)),
@@ -39,7 +44,7 @@ public class PartyTest {
 
     @Test
     public void cannotAddExistingPartyMember() {
-        Barbarian barbarian = new Barbarian();
+        Barbarian barbarian = new Barbarian("Grog");
         party.addPartyMember(barbarian);
         party.addPartyMember(barbarian);
         assertEquals(
@@ -50,13 +55,13 @@ public class PartyTest {
 
     @Test
     public void cannotAddMoreThanSixPartyMembers() {
-        Barbarian barbarian = new Barbarian();
-        Cleric cleric = new Cleric();
-        Dwarf dwarf = new Dwarf();
-        Knight knight = new Knight();
-        Warlock warlock = new Warlock();
-        Wizard wizard = new Wizard();
-        Barbarian otherBarbarian = new Barbarian();
+        Barbarian barbarian = new Barbarian("Grog");
+        Cleric cleric = new Cleric("Pike");
+        Dwarf dwarf = new Dwarf("Tova");
+        Knight knight = new Knight("Vax");
+        Warlock warlock = new Warlock("Percy");
+        Wizard wizard = new Wizard("Caleb");
+        Barbarian otherBarbarian = new Barbarian("Yasha");
 
         party.addPartyMember(barbarian);
         party.addPartyMember(cleric);
@@ -68,6 +73,17 @@ public class PartyTest {
 
         assertEquals(
                 new ArrayList<>(Arrays.asList(barbarian, cleric, dwarf, knight, warlock, wizard)),
+                party.getPartyMembers()
+        );
+    }
+
+    @Test
+    public void canRemovePartyMember() {
+        Barbarian barbarian = new Barbarian("Grog");
+        party.addPartyMember(barbarian);
+        party.removePartyMember(barbarian);
+        assertEquals(
+                new ArrayList<>(),
                 party.getPartyMembers()
         );
     }

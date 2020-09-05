@@ -15,7 +15,12 @@ public class ClericTest {
 
     @Before
     public void before() {
-        cleric = new Cleric();
+        cleric = new Cleric("Pike");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Pike", cleric.getName());
     }
 
     @Test

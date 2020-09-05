@@ -6,8 +6,9 @@ import party.archetypes.Melee;
 
 public class Barbarian extends Melee {
 
-    public Barbarian() {
+    public Barbarian(String name) {
         super(
+                name,
                 50,
                 10,
                 5,

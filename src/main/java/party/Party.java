@@ -25,10 +25,18 @@ public class Party {
         return partyMembers;
     }
 
+    public int getPartySize() {
+        return partyMembers.size();
+    }
+
     public void addPartyMember(Player player) {
         if (partyMembers.contains(player)) return;
         if (partyMembers.size() >= 6) return;
         partyMembers.add(player);
+    }
+
+    public void removePartyMember(Player player) {
+        partyMembers.remove(player);
     }
 
 

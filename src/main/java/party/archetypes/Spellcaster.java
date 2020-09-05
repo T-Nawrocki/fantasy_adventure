@@ -16,6 +16,7 @@ public abstract class Spellcaster extends Player {
     private Familiar familiar;
 
     public Spellcaster(
+            String name,
             int maxHealth,
             int strength,
             int resistance,
@@ -25,7 +26,7 @@ public abstract class Spellcaster extends Player {
             int maxMana,
             Familiar familiar
     ) {
-        super(maxHealth, strength, resistance, weapon, armour);
+        super(name, maxHealth, strength, resistance, weapon, armour);
         this.spellbook = spellbook;
         this.maxMana = maxMana;
         this.currentMana = maxMana;

@@ -13,8 +13,9 @@ public class Warlock extends Spellcaster {
 
 
 
-    public Warlock() {
+    public Warlock(String name) {
         super(
+                name,
                 20,
                 0,
                 0,

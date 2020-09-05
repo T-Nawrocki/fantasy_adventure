@@ -14,7 +14,12 @@ public class DwarfTest {
 
     @Before
     public void before() {
-        dwarf = new Dwarf();
+        dwarf = new Dwarf("Tova");
+    }
+
+    @Test
+    public void hasName() {
+        assertEquals("Tova", dwarf.getName());
     }
 
     @Test
