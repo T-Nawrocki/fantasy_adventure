@@ -12,7 +12,6 @@ public abstract class Player {
     private int resistance;
     private Weapon weapon;
     private Armour armour;
-    private int loot;
 
     public abstract void fight();
     public abstract void useAbility();
@@ -25,7 +24,6 @@ public abstract class Player {
         this.resistance = resistance;
         this.weapon = weapon;
         this.armour = armour;
-        this.loot = 0;
     }
 
     public String getName() {
@@ -56,10 +54,6 @@ public abstract class Player {
         return armour;
     }
 
-    public int getLoot() {
-        return loot;
-    }
-
     public void changeWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
@@ -76,10 +70,6 @@ public abstract class Player {
     public void gainHealth(int amount) {
         currentHealth += amount;
         if (currentHealth > maxHealth) currentHealth = maxHealth;
-    }
-
-    public void collectLoot(int amount) {
-        loot += amount;
     }
 
 }

@@ -8,10 +8,11 @@ public class Runner {
 
         gatherParty();
         introDescription();
-
         changeRoom();
-        while (!gameOver) {
-        }
+
+        // TODO room looting
+        // TODO move to new room
+        // TODO game over—lose
 
     }
 

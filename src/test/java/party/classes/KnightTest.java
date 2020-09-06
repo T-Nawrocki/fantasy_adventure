@@ -58,11 +58,6 @@ public class KnightTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, knight.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         knight.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, knight.getWeapon());
@@ -98,13 +93,6 @@ public class KnightTest {
         knight.gainHealth(1);
         assertEquals(40, knight.getCurrentHealth());
     }
-
-    @Test
-    public void canCollectLoot() {
-        knight.collectLoot(10);
-        assertEquals(10, knight.getLoot());
-    }
-
 
     @Test
     public void canFight() {

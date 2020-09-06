@@ -64,11 +64,6 @@ public class WarlockTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, warlock.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         warlock.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, warlock.getWeapon());
@@ -104,13 +99,6 @@ public class WarlockTest {
         warlock.gainHealth(1);
         assertEquals(20, warlock.getCurrentHealth());
     }
-
-    @Test
-    public void canCollectLoot() {
-        warlock.collectLoot(10);
-        assertEquals(10, warlock.getLoot());
-    }
-
 
     @Test
     public void canFight() {

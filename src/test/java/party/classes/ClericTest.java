@@ -59,11 +59,6 @@ public class ClericTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, cleric.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         cleric.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, cleric.getWeapon());
@@ -99,13 +94,6 @@ public class ClericTest {
         cleric.gainHealth(1);
         assertEquals(20, cleric.getCurrentHealth());
     }
-
-    @Test
-    public void canCollectLoot() {
-        cleric.collectLoot(10);
-        assertEquals(10, cleric.getLoot());
-    }
-
 
     @Test
     public void canFight() {

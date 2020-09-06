@@ -59,11 +59,6 @@ public class BarbarianTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, barbarian.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         barbarian.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, barbarian.getWeapon());
@@ -98,12 +93,6 @@ public class BarbarianTest {
     public void cannotGoAboveMaxHealth() {
         barbarian.gainHealth(1);
         assertEquals(50, barbarian.getCurrentHealth());
-    }
-
-    @Test
-    public void canCollectLoot() {
-        barbarian.collectLoot(10);
-        assertEquals(10, barbarian.getLoot());
     }
 
     @Test

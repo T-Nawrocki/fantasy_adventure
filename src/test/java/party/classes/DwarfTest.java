@@ -58,11 +58,6 @@ public class DwarfTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, dwarf.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         dwarf.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, dwarf.getWeapon());
@@ -97,12 +92,6 @@ public class DwarfTest {
     public void cannotGoAboveMaxHealth() {
         dwarf.gainHealth(1);
         assertEquals(30, dwarf.getCurrentHealth());
-    }
-
-    @Test
-    public void canCollectLoot() {
-        dwarf.collectLoot(10);
-        assertEquals(10, dwarf.getLoot());
     }
 
     @Test

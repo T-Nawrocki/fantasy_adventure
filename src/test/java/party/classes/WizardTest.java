@@ -64,11 +64,6 @@ public class WizardTest {
     }
 
     @Test
-    public void hasLoot() {
-        assertEquals(0, wizard.getLoot());
-    }
-
-    @Test
     public void canChangeWeapon() {
         wizard.changeWeapon(Weapon.MAGIC_SWORD);
         assertEquals(Weapon.MAGIC_SWORD, wizard.getWeapon());
@@ -104,13 +99,6 @@ public class WizardTest {
         wizard.gainHealth(1);
         assertEquals(20, wizard.getCurrentHealth());
     }
-
-    @Test
-    public void canCollectLoot() {
-        wizard.collectLoot(10);
-        assertEquals(10, wizard.getLoot());
-    }
-
 
     @Test
     public void canFight() {

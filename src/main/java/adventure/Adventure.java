@@ -151,9 +151,14 @@ public class Adventure {
         } else {
             currentRoom = new EnemyRoom();
             currentRoom.describeEnemy();
-//            combat();
+            combat();
         }
     }
+
+    private static void combat() {
+        // TODO combat mechanics
+    }
+
 
     private static void winGame() {
         divider();
