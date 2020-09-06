@@ -11,8 +11,6 @@ import java.util.Collections;
 
 public class Warlock extends Spellcaster {
 
-
-
     public Warlock(String name) {
         super(
                 name,
@@ -25,6 +23,11 @@ public class Warlock extends Spellcaster {
                 30,
                 Familiar.IMP
         );
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s the Warlock", getName());
     }
 
     @Override

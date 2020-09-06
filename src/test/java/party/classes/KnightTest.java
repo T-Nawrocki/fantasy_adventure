@@ -23,6 +23,11 @@ public class KnightTest {
     }
 
     @Test
+    public void canConvertToString() {
+        assertEquals("Vax the Knight", knight.toString());
+    }
+
+    @Test
     public void hasMaxHealth() {
         assertEquals(40, knight.getMaxHealth());
     }

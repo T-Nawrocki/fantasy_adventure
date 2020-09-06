@@ -1,6 +1,8 @@
 package dungeon.rooms;
 
 import dungeon.Room;
+import enemy.Enemy;
+import enemy.EnemyType;
 import equipment.*;
 
 import java.util.AbstractMap;
@@ -8,12 +10,14 @@ import java.util.Random;
 
 import static helpers.Divider.divider;
 
-public class TreasureRoom extends Room {
+public class EnemyRoom extends Room {
 
+    private Enemy enemy;
     private Random random = new Random();
 
     @Override
     public void generateContents() {
+        this.enemy = generateEnemy();
         this.treasure = generateTreasure();
         this.weapon = generateWeapon();
         this.armour = generateArmour();
@@ -45,14 +49,19 @@ public class TreasureRoom extends Room {
         );
     }
 
+    private Enemy generateEnemy() {
+        EnemyType[] options = EnemyType.values();
+        return options[random.nextInt(options.length)].getInstance();
+    }
+
     private int generateTreasure() {
-        int min = 10;
-        int max = 1000;
+        int min = 50;
+        int max = 200;
         return random.nextInt((max - min) + 1) + min;
     }
 
     private Weapon generateWeapon() {
-        int chance = 5;  // chance of room containing this item type is 1/chance
+        int chance = 10;  // chance of room containing this item type is 1/chance
         int roll = random.nextInt(chance);
 
         if (roll == 0) {
@@ -64,7 +73,7 @@ public class TreasureRoom extends Room {
     }
 
     private Armour generateArmour() {
-        int chance = 5;  // chance of room containing this item type is 1/chance
+        int chance = 10;  // chance of room containing this item type is 1/chance
         int roll = random.nextInt(chance);
 
         if (roll == 0) {
@@ -76,7 +85,7 @@ public class TreasureRoom extends Room {
     }
 
     private Spell generateSpell() {
-        int chance = 5;  // chance of room containing this item type is 1/chance
+        int chance = 10;  // chance of room containing this item type is 1/chance
         int roll = random.nextInt(chance);
 
         if (roll == 0) {
@@ -88,7 +97,7 @@ public class TreasureRoom extends Room {
     }
 
     private AbstractMap.SimpleEntry<HealingItem, Integer> generateHealingItem() {
-        int chance = 5;  // chance of room containing this item type is 1/chance
+        int chance = 3;  // chance of room containing this item type is 1/chance
         int roll = random.nextInt(chance);
 
         if (roll == 0) {
@@ -104,7 +113,7 @@ public class TreasureRoom extends Room {
     }
 
     private Familiar generateFamiliar() {
-        int chance = 5;  // chance of room containing this item type is 1/chance
+        int chance = 10;  // chance of room containing this item type is 1/chance
         int roll = random.nextInt(chance);
 
         if (roll == 0) {

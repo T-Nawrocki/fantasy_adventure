@@ -13,11 +13,27 @@ import static org.junit.Assert.assertEquals;
 public class PartyTest {
 
     private Party party = Party.getInstance() ;
+    private Barbarian barbarian;
+    private Cleric cleric;
+    private Dwarf dwarf;
+    private Knight knight;
+    private Warlock warlock;
+    private Wizard wizard;
+    private Barbarian otherBarbarian;
+
 
     @Before
     public void before() {
         party.resetInstance();
+        barbarian = new Barbarian("Grog");
+        cleric = new Cleric("Pike");
+        dwarf = new Dwarf("Tova");
+        knight = new Knight("Vax");
+        warlock = new Warlock("Percy");
+        wizard = new Wizard("Caleb");
+        otherBarbarian = new Barbarian("Yasha");
     }
+
 
     @Test
     public void canGetPartySize() {
@@ -34,7 +50,6 @@ public class PartyTest {
 
     @Test
     public void canAddPartyMember() {
-        Barbarian barbarian = new Barbarian("Grog");
         party.addPartyMember(barbarian);
         assertEquals(
                 new ArrayList<>(Collections.singletonList(barbarian)),
@@ -44,7 +59,6 @@ public class PartyTest {
 
     @Test
     public void cannotAddExistingPartyMember() {
-        Barbarian barbarian = new Barbarian("Grog");
         party.addPartyMember(barbarian);
         party.addPartyMember(barbarian);
         assertEquals(
@@ -55,14 +69,6 @@ public class PartyTest {
 
     @Test
     public void cannotAddMoreThanSixPartyMembers() {
-        Barbarian barbarian = new Barbarian("Grog");
-        Cleric cleric = new Cleric("Pike");
-        Dwarf dwarf = new Dwarf("Tova");
-        Knight knight = new Knight("Vax");
-        Warlock warlock = new Warlock("Percy");
-        Wizard wizard = new Wizard("Caleb");
-        Barbarian otherBarbarian = new Barbarian("Yasha");
-
         party.addPartyMember(barbarian);
         party.addPartyMember(cleric);
         party.addPartyMember(dwarf);
@@ -79,12 +85,40 @@ public class PartyTest {
 
     @Test
     public void canRemovePartyMember() {
-        Barbarian barbarian = new Barbarian("Grog");
         party.addPartyMember(barbarian);
         party.removePartyMember(barbarian);
         assertEquals(
                 new ArrayList<>(),
                 party.getPartyMembers()
+        );
+    }
+
+    @Test
+    public void canGetPartyDescriptionEmptyParty() {
+        assertEquals("no-one", party.partyDescription());
+    }
+
+    @Test
+    public void canGetPartyDescriptionPartyOfOne() {
+        party.addPartyMember(barbarian);
+        assertEquals("Grog the Barbarian", party.partyDescription());
+    }
+
+    @Test
+    public void canGetPartyDescriptionPartyOfTwo() {
+        party.addPartyMember(barbarian);
+        party.addPartyMember(cleric);
+        assertEquals("Grog the Barbarian and Pike the Cleric", party.partyDescription());
+    }
+
+    @Test
+    public void canGetPartyDescriptionPartyOfThreePlus() {
+        party.addPartyMember(barbarian);
+        party.addPartyMember(cleric);
+        party.addPartyMember(warlock);
+        assertEquals(
+                "Grog the Barbarian, Pike the Cleric and Percy the Warlock",
+                party.partyDescription()
         );
     }
 

@@ -60,7 +60,6 @@ public abstract class Player {
         return loot;
     }
 
-
     public void changeWeapon(Weapon weapon) {
         this.weapon = weapon;
     }

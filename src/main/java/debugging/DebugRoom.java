@@ -6,6 +6,8 @@ import equipment.*;
 
 import java.util.AbstractMap;
 
+import static helpers.Divider.divider;
+
 // THIS IS A DEBUGGING CLASS WHICH SHOULD NOT BE INSTANTIATED OUTSIDE OF TESTS
 public class DebugRoom extends Room {
 
@@ -21,7 +23,7 @@ public class DebugRoom extends Room {
 
     @Override
     public void describeRoom() {
-        System.out.println("==========");
+        divider();
         System.out.println("You're not quite sure how you ended up here, " +
                 "but this appears to be some sort of control room");
         System.out.println("The walls are blank, " +

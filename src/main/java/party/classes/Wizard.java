@@ -26,6 +26,10 @@ public class Wizard extends Spellcaster {
 
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s the Wizard", getName());
+    }
 
     @Override
     public void fight() {

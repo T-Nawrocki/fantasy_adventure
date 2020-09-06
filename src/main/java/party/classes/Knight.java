@@ -18,6 +18,11 @@ public class Knight extends Melee {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s the Knight", getName());
+    }
+
+    @Override
     public void fight() {
         System.out.println("Knight is fighting");
     }

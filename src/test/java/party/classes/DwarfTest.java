@@ -23,6 +23,11 @@ public class DwarfTest {
     }
 
     @Test
+    public void canConvertToString() {
+        assertEquals("Tova the Dwarf", dwarf.toString());
+    }
+
+    @Test
     public void hasMaxHp() {
         assertEquals(30, dwarf.getMaxHealth());
     }

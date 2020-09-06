@@ -18,6 +18,11 @@ public class Barbarian extends Melee {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s the Barbarian", getName());
+    }
+
+    @Override
     public void fight() {
         System.out.println("Barbarian smash");
     }

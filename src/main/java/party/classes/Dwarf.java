@@ -18,6 +18,11 @@ public class Dwarf extends Melee {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s the Dwarf", getName());
+    }
+
+    @Override
     public void fight() {
         System.out.println("Dwarf is fighting");
     }

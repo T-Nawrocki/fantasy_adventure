@@ -24,6 +24,11 @@ public class ClericTest {
     }
 
     @Test
+    public void canConvertToString() {
+        assertEquals("Pike the Cleric", cleric.toString());
+    }
+
+    @Test
     public void hasMaxHealth() {
         assertEquals(20, cleric.getMaxHealth());
     }

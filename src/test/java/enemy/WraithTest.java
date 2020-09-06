@@ -1,5 +1,6 @@
 package enemy;
 
+import enemy.types.Wraith;
 import org.junit.Before;
 import org.junit.Test;
 

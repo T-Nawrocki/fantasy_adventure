@@ -1,6 +1,7 @@
 package party;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Party {
 
@@ -37,6 +38,19 @@ public class Party {
 
     public void removePartyMember(Player player) {
         partyMembers.remove(player);
+    }
+
+    public String partyDescription() {
+        if (getPartySize() == 0) return "no-one";
+        if (getPartySize() == 1) return partyMembers.get(0).toString();
+
+        ArrayList<String> partyNames = partyMembers.stream()
+                .map(Player::toString)
+                .collect(Collectors.toCollection(ArrayList::new));
+        // gets comma separated list of all but final member
+        String commaSeparated = String.join(", ", partyNames.subList(0, getPartySize() - 1));
+        // adds final "and" and last party member
+        return commaSeparated + " and " + partyNames.get(getPartySize() - 1);
     }
 
 

@@ -31,6 +31,11 @@ public class Cleric extends Spellcaster {
     }
 
     @Override
+    public String toString() {
+        return String.format("%s the Cleric", getName());
+    }
+
+    @Override
     public void fight() {
         System.out.println("The Cleric flails around, hoping to do some damage... It's not very effective.");
     }

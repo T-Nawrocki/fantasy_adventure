@@ -29,6 +29,11 @@ public class WizardTest {
     }
 
     @Test
+    public void canConvertToString() {
+        assertEquals("Caleb the Wizard", wizard.toString());
+    }
+
+    @Test
     public void hasMaxHealth() {
         assertEquals(20, wizard.getMaxHealth());
     }

@@ -1,4 +1,6 @@
-package enemy;
+package enemy.types;
+
+import enemy.Enemy;
 
 public class Dragon extends Enemy {
 

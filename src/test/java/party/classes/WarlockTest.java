@@ -29,6 +29,11 @@ public class WarlockTest {
     }
 
     @Test
+    public void canConvertToString() {
+        assertEquals("Percy the Warlock", warlock.toString());
+    }
+
+    @Test
     public void hasMaxHealth() {
         assertEquals(20, warlock.getMaxHealth());
     }

@@ -17,9 +17,15 @@ public class BarbarianTest {
         barbarian = new Barbarian("Grog");
     }
 
+
     @Test
     public void hasName() {
         assertEquals("Grog", barbarian.getName());
+    }
+
+    @Test
+    public void canConvertToString() {
+        assertEquals("Grog the Barbarian", barbarian.toString());
     }
 
     @Test

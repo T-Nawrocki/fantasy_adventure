@@ -3,7 +3,6 @@ package dungeon;
 import equipment.*;
 
 import java.util.AbstractMap;
-import java.util.HashMap;
 
 public abstract class Room {
 
