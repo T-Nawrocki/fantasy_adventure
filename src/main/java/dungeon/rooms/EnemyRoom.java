@@ -13,7 +13,7 @@ import static helpers.Divider.divider;
 public class EnemyRoom extends Room {
 
     private Enemy enemy;
-    private Random random = new Random();
+    private static Random random = new Random();
 
     @Override
     public void generateContents() {
@@ -29,24 +29,34 @@ public class EnemyRoom extends Room {
     @Override
     public void describeRoom() {
         divider();
-        System.out.println("This room appears to be empty, " +
-                "but after a quick check you find some treasure and useful items!");
-        System.out.printf("You find valuables worth a total of %d gp.", treasure);
-        if (weapon != null) System.out.printf("A chest in the corner holds a %s.", weapon.getName());
-        if (armour != null) System.out.printf("There is an armour stand with a %s on it.", armour.getName());
+        System.out.printf(
+                "With the %s dead, you have a chance to look around the room and see what you can find...%n",
+                enemy.getName()
+        );
+        System.out.printf("You find valuables worth a total of %d gp.%n", treasure);
+        if (weapon != null) System.out.printf("A chest in the corner holds a %s.%n", weapon.getName());
+        if (armour != null) System.out.printf("There is an armour stand with a %s on it.%n", armour.getName());
         if (spell != null) System.out.printf(
-                "On a bookshelf, you find a scroll containing details of the %s spell.",
+                "On a bookshelf, you find a scroll containing details of the %s spell.%n",
                 spell.getName()
         );
         if (healingItem != null) System.out.printf(
-                "Among the papers on a workbench in the centre of the room, you find %d %s.",
+                "Among the papers on a workbench in the centre of the room, you find %d %s.%n",
                 healingItem.getValue(),
                 healingItem.getValue() > 1 ? healingItem.getKey() + "s" : healingItem.getKey()
         );
         if (familiar != null) System.out.printf(
-                "A shrine at the back of the room is dedicated to a %s spirit.",
+                "A shrine at the back of the room is dedicated to a %s spirit.%n",
                 familiar.getName()
         );
+    }
+
+    @Override
+    public void describeEnemy() {
+        divider();
+        System.out.printf("You enter the room, and are confronted with a %s, preparing to attack!%n", enemy.getName());
+        System.out.println("You will have to deal with it before you can move forward...");
+
     }
 
     private Enemy generateEnemy() {

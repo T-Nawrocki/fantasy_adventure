@@ -8,9 +8,11 @@ public class Party {
     private static Party instance = new Party();
 
     private ArrayList<Player> partyMembers;
+    private int loot;
 
     private Party() {
         partyMembers = new ArrayList<>();
+        loot = 0;
     }
 
     public static Party getInstance() {
@@ -19,11 +21,15 @@ public class Party {
 
     public void resetInstance() {
         partyMembers = new ArrayList<>();
-
+        loot = 0;
     }
 
     public ArrayList<Player> getPartyMembers() {
         return partyMembers;
+    }
+
+    public int getLoot() {
+        return loot;
     }
 
     public int getPartySize() {
@@ -53,5 +59,8 @@ public class Party {
         return commaSeparated + " and " + partyNames.get(getPartySize() - 1);
     }
 
+    public void collectLoot(int amount) {
+        loot += amount;
+    }
 
 }

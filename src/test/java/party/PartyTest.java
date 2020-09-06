@@ -34,6 +34,10 @@ public class PartyTest {
         otherBarbarian = new Barbarian("Yasha");
     }
 
+    @Test
+    public void hasLoot() {
+        assertEquals(0, party.getLoot());
+    }
 
     @Test
     public void canGetPartySize() {
@@ -120,6 +124,12 @@ public class PartyTest {
                 "Grog the Barbarian, Pike the Cleric and Percy the Warlock",
                 party.partyDescription()
         );
+    }
+
+    @Test
+    public void canCollectLoot() {
+        party.collectLoot(10);
+        assertEquals(10, party.getLoot());
     }
 
 

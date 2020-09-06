@@ -31,4 +31,7 @@ public class DebugRoom extends Room {
         System.out.println("There are four doors, but they all seem to lead back here.");
     }
 
+    @Override
+    public void describeEnemy() {}
+
 }
